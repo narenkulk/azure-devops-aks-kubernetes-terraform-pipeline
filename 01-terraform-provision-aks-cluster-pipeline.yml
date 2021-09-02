@@ -6,8 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default
 
 variables:
   - name: DEV_ENVIRONMENT
@@ -53,8 +52,7 @@ stages:
     jobs:
       - deployment: DeployDevAKSCluster
         displayName: DeployDevAKSCluster
-        pool:
-          vmImage: 'ubuntu-latest'
+        pool: Default
         environment: $(DEV_ENVIRONMENT) 
         strategy:
           runOnce:
@@ -95,8 +93,7 @@ stages:
       - deployment: DeployQAAKSCluster
         dependsOn: DeployDevAKSCluster
         displayName: DeployQAAKSCluster
-        pool:
-          vmImage: 'ubuntu-latest'
+        pool: Default
         environment: $(QA_ENVIRONMENT) 
         strategy:
           runOnce:
