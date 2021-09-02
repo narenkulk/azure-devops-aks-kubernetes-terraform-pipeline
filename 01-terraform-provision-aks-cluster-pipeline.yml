@@ -61,7 +61,7 @@ stages:
             deploy:
               steps:
                 - task: DownloadSecureFile@1
-                  displayName: Download SSH Key
+                  displayName: DownloadSSHKey
 									name: sshkey
                   inputs:
                     secureFile: 'aks-terraform-devops-ssh-key-ububtu.pub'
